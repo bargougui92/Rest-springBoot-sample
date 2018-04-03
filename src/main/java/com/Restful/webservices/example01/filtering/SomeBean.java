@@ -1,12 +1,14 @@
 package com.Restful.webservices.example01.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
+//this means this class allows filtering using the filter someBEanFilter... p.s:check Filtering Controller
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 	private String f1;
 	private String f2;
 	//this will hide the field it won't show up in responses
-	@JsonIgnore
+	//	@JsonIgnore
 	private String f3;
 	public SomeBean(String f1, String f2, String f3) {
 		super();
